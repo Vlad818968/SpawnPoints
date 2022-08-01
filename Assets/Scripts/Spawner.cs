@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject _enemy;
-    [SerializeField] float _waitingSpawn;
+    [SerializeField] private Enemy _enemy;
+    [SerializeField] private float _waitingSpawn;
 
     private Transform[] _allPoints;
 
     private void Awake()
     {
-        _allPoints= GetComponentsInChildren<Transform>();
+        _allPoints = GetComponentsInChildren<Transform>();
         StartCoroutine(SpawnEnemy(_waitingSpawn));
     }
 
